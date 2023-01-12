@@ -6,6 +6,23 @@
 
 
 // Задаем массив:
-string[] arr1 = new string[6] {"167", "yes", "hi", "2023", "111", "who"};
+string[] array = new string[6] {"16712334", "yes", "hi", "2023", "111", "who"};
+
+
+// Создаем метод, внутри которого проверяется каждый элемент массива  на выполнение задачи:
+
+
+void SecondArrayWithIF(string[] array )
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+    if(array[i].Length <= 3)
+        {
+        array[count] = array[i];
+        count++;
+        }
+    }
+}
 
 

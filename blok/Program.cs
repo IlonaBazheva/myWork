@@ -10,19 +10,35 @@ string[] array = new string[6] {"16712334", "yes", "hi", "2023", "111", "who"};
 
 
 // Создаем метод, внутри которого проверяется каждый элемент массива  на выполнение задачи:
+// Еще вводим новый массив, чтобы нужные эелементы выводились там, иначе возникает ошибка, 
+// так как размер нашего массива не соответствует результату.
 
+string[] newarray = new string[array.Length];
 
-void SecondArrayWithIF(string[] array )
+void SecondArrayWithIF(string[] array, string[] newarray )
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
     if(array[i].Length <= 3)
         {
-        array[count] = array[i];
+        newarray[count] = array[i];
         count++;
         }
     }
 }
 
 
+// Метод для вывода соответствующих эелементов массива:
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+    Console.WriteLine();
+}
+SecondArrayWithIF(array, newarray);
+
+// Выводим на печать наш новый массив:
+PrintArray(newarray);
